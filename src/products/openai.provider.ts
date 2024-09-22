@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
+require('dotenv').config();
 
 @Injectable()
 export class OpenAIProvider {
@@ -7,7 +8,7 @@ export class OpenAIProvider {
 
   constructor() {
     this.openai = new OpenAI({
-      apiKey: 'sk-PuwjX2r7Y6xB4i57QUqO_jALg4aTL8KwB8MuGGa6UhT3BlbkFJBCU6Pdy6fM-5cMhnhVTkYRpjlOZM2CPaJDOmGuqoQA'
+      apiKey: process.env.OPENAI_API_KEY
     });
   }
 
